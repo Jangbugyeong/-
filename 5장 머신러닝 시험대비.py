@@ -87,3 +87,11 @@ sns.lmplot(x="x", y="y", data=anscombe.query("dataset == 'III'"), # lmplot()은 
 # 산점도의 **점 크기(size)**를 키움
 sns.lmplot(x="x", y="y", data=anscombe.query("dataset == 'III'"),
            robust=True, ci=None, scatter_kws={"s": 80}) # robust=True는 회귀선이 이상치에 덜 흔들리도록 "강건한" 회귀선을 그려주는 옵션
+
+# 예제 실습
+
+tips = sns.load_dataset('tips')
+tips.head()
+
+
+sns.lmplot(x='total_bill', y='tip', data=tips, order=1, scatter=True,hue='smoker')
